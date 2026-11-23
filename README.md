@@ -1,4 +1,4 @@
-# LiteCalib examples
+# LiteCalib examples 
 
 Large files of the LiteCalib project page ([kocurvik.github.io/litecalib](https://kocurvik.github.io/litecalib)),
 kept out of the page's repository and served from this repository's GitHub Pages
