@@ -1,0 +1,17 @@
+{
+ "cam_id": "kb:4",
+ "params": [
+  301.9503085493233,
+  302.21733327626583,
+  438.0,
+  292.0,
+  0.03518913458900453,
+  0.010851443942681656,
+  -0.002935889730721351,
+  0.0009390369317123441
+ ],
+ "w": 876,
+ "h": 584,
+ "source": "https://storage.googleapis.com/gresearch/refraw360/zipnerf/alameda.zip",
+ "folder": "alameda/images_4/"
+}

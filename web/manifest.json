@@ -1,0 +1,332 @@
+{
+ "mde": {
+  "berlin": {
+   "moge3": {
+    "files": [
+     "web/clouds/mde/berlin/moge3_fisheye.bin.gz",
+     "web/clouds/mde/berlin/moge3_litecalib.bin.gz"
+    ],
+    "angle": [
+     78.6,
+     89.3
+    ],
+    "photos": {
+     "fisheye": [
+      [
+       "web/photos/berlin/mde/mde_frame.jpg",
+       "assets/berlin/mde_frame.jpg"
+      ]
+     ],
+     "litecalib": [
+      [
+       "web/photos/berlin/mde/mde_undist.jpg",
+       "assets/berlin/mde_undist.jpg"
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "recon": {
+  "alameda_kitchen": {
+   "pi3x": {
+    "files": [
+     "web/clouds/recon/alameda_kitchen/pi3x_fisheye.bin.gz",
+     "web/clouds/recon/alameda_kitchen/pi3x_litecalib.bin.gz"
+    ],
+    "gt": "web/clouds/recon/alameda_kitchen/pi3x_gt.bin.gz",
+    "maa5": [
+     0.0,
+     58.7
+    ],
+    "maa5_gt": 58.5,
+    "photos": {
+     "fisheye": [
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07082.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07082.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07109.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07109.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07117.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07117.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07125.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07125.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07136.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07136.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07138.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07138.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07143.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07143.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07144.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07144.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07155.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07155.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/fisheye/DSC07159.jpg",
+       "assets/alameda_kitchen/fisheye/DSC07159.JPG"
+      ]
+     ],
+     "litecalib": [
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07082.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07082.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07109.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07109.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07117.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07117.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07125.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07125.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07136.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07136.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07138.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07138.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07143.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07143.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07144.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07144.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07155.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07155.JPG"
+      ],
+      [
+       "web/photos/alameda_kitchen/litecalib/DSC07159.jpg",
+       "assets/alameda_kitchen/undist_litecalib/DSC07159.JPG"
+      ]
+     ]
+    }
+   }
+  },
+  "berlin": {
+   "pi3x": {
+    "files": [
+     "web/clouds/recon/berlin/pi3x_fisheye.bin.gz",
+     "web/clouds/recon/berlin/pi3x_litecalib.bin.gz"
+    ],
+    "gt": "web/clouds/recon/berlin/pi3x_gt.bin.gz",
+    "maa5": [
+     1.3,
+     67.2
+    ],
+    "maa5_gt": 86.7,
+    "photos": {
+     "fisheye": [
+      [
+       "web/photos/berlin/fisheye/DSC00290.jpg",
+       "assets/berlin/fisheye/DSC00290.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00291.jpg",
+       "assets/berlin/fisheye/DSC00291.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00292.jpg",
+       "assets/berlin/fisheye/DSC00292.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00293.jpg",
+       "assets/berlin/fisheye/DSC00293.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00294.jpg",
+       "assets/berlin/fisheye/DSC00294.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00295.jpg",
+       "assets/berlin/fisheye/DSC00295.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00296.jpg",
+       "assets/berlin/fisheye/DSC00296.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00297.jpg",
+       "assets/berlin/fisheye/DSC00297.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00298.jpg",
+       "assets/berlin/fisheye/DSC00298.JPG"
+      ],
+      [
+       "web/photos/berlin/fisheye/DSC00299.jpg",
+       "assets/berlin/fisheye/DSC00299.JPG"
+      ]
+     ],
+     "litecalib": [
+      [
+       "web/photos/berlin/litecalib/DSC00290.jpg",
+       "assets/berlin/undist_litecalib/DSC00290.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00291.jpg",
+       "assets/berlin/undist_litecalib/DSC00291.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00292.jpg",
+       "assets/berlin/undist_litecalib/DSC00292.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00293.jpg",
+       "assets/berlin/undist_litecalib/DSC00293.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00294.jpg",
+       "assets/berlin/undist_litecalib/DSC00294.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00295.jpg",
+       "assets/berlin/undist_litecalib/DSC00295.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00296.jpg",
+       "assets/berlin/undist_litecalib/DSC00296.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00297.jpg",
+       "assets/berlin/undist_litecalib/DSC00297.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00298.jpg",
+       "assets/berlin/undist_litecalib/DSC00298.JPG"
+      ],
+      [
+       "web/photos/berlin/litecalib/DSC00299.jpg",
+       "assets/berlin/undist_litecalib/DSC00299.JPG"
+      ]
+     ]
+    }
+   }
+  },
+  "berlin_living": {
+   "pi3x": {
+    "files": [
+     "web/clouds/recon/berlin_living/pi3x_fisheye.bin.gz",
+     "web/clouds/recon/berlin_living/pi3x_litecalib.bin.gz"
+    ],
+    "gt": "web/clouds/recon/berlin_living/pi3x_gt.bin.gz",
+    "maa5": [
+     1.2,
+     68.0
+    ],
+    "maa5_gt": 65.3,
+    "photos": {
+     "fisheye": [
+      [
+       "web/photos/berlin_living/fisheye/DSC01283.jpg",
+       "assets/berlin_living/fisheye/DSC01283.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01285.jpg",
+       "assets/berlin_living/fisheye/DSC01285.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01298.jpg",
+       "assets/berlin_living/fisheye/DSC01298.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01313.jpg",
+       "assets/berlin_living/fisheye/DSC01313.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01319.jpg",
+       "assets/berlin_living/fisheye/DSC01319.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01321.jpg",
+       "assets/berlin_living/fisheye/DSC01321.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01326.jpg",
+       "assets/berlin_living/fisheye/DSC01326.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01337.jpg",
+       "assets/berlin_living/fisheye/DSC01337.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01344.jpg",
+       "assets/berlin_living/fisheye/DSC01344.JPG"
+      ],
+      [
+       "web/photos/berlin_living/fisheye/DSC01349.jpg",
+       "assets/berlin_living/fisheye/DSC01349.JPG"
+      ]
+     ],
+     "litecalib": [
+      [
+       "web/photos/berlin_living/litecalib/DSC01283.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01283.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01285.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01285.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01298.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01298.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01313.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01313.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01319.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01319.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01321.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01321.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01326.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01326.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01337.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01337.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01344.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01344.JPG"
+      ],
+      [
+       "web/photos/berlin_living/litecalib/DSC01349.jpg",
+       "assets/berlin_living/undist_litecalib/DSC01349.JPG"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}
