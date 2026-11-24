@@ -3,8 +3,10 @@
     python convert.py              (needs numpy and Pillow; rewrites web/ from scratch)
 
 Inputs, per scene folder assets/<scene>/ (what the paper repo's video/prepare_assets.py writes):
-    mde_{fisheye,litecalib}.npz        monocular geometry (MoGe-3): points (H, W, 3), colors (H, W, 3), mask (H, W)
-    mde_planes.json                    plane fits of its walls (angles_deg), optional
+    mde_<method>_{fisheye,litecalib}.npz  single-image geometry (the paper repo's video/prepare_mde_assets.py: moge3,
+                                       unidepth_v2, unik3d, pi3x, mapanything, da3, vggt_omega): points (H, W, 3),
+                                       colors (H, W, 3), mask (H, W); mde_{fisheye,litecalib}.npz = the older MoGe-3 files
+    mde_<method>_planes.json           plane fits of its walls (angles_deg), optional (mde_planes.json: the older MoGe-3's)
     mde_frame.jpg, mde_undist.jpg      its input photo, raw and undistorted with LiteCalib
     <method>_{fisheye,litecalib,gt}.npz  3D reconstruction (e.g. pi3x): points, colors, c2w (N, 4, 4), conf optional;
                                        gt = photos undistorted with the ground-truth camera, optional
@@ -120,28 +122,41 @@ def wall_angle(angles):
     return None
 
 
+def mde_methods(d):
+    """method -> its npz name prefix and its plane fits: mde_<method>_{fisheye,litecalib}.npz (+ _planes.json), and
+    the older MoGe-3 names mde_{fisheye,litecalib}.npz (+ mde_planes.json) when there is no mde_moge3_*"""
+    res = {}
+    for f in sorted(d.glob("mde_*_fisheye.npz")):
+        m = f.name[len("mde_"):-len("_fisheye.npz")]
+        if (d / f"mde_{m}_litecalib.npz").exists():
+            res[m] = (f"mde_{m}_", d / f"mde_{m}_planes.json")
+    if "moge3" not in res and all((d / f"mde_{t}.npz").exists() for t in ("fisheye", "litecalib")):
+        res["moge3"] = ("mde_", d / "mde_planes.json")
+    return res
+
+
 def mde(d):
-    if not all((d / f"mde_{t}.npz").exists() for t in ("fisheye", "litecalib")):
-        return {}
+    res = {}
+    for method, (prefix, planes) in mde_methods(d).items():
+        entry = {"files": []}
+        for tag in ("fisheye", "litecalib"):
+            z = np.load(d / f"{prefix}{tag}.npz")
+            mask = z["mask"].astype(bool) if "mask" in z else np.ones(z["points"].shape[:-1], bool)
+            P = z["points"].astype(np.float32).reshape(-1, 3)[mask.reshape(-1)]
+            C = colors01(z["colors"]).reshape(-1, 3)[mask.reshape(-1)]
+            keep = np.isfinite(P).all(1)
+            P, C = P[keep], C[keep]
+            i = subsample(len(P), MDE_POINTS)
+            entry["files"].append(write_cloud(OUT / "clouds" / "mde" / d.name / f"{method}_{tag}.bin.gz", P[i] @ FLIP, C[i], [viewer_c2w(np.eye(4))]))
 
-    entry = {"files": []}
-    for tag in ("fisheye", "litecalib"):
-        z = np.load(d / f"mde_{tag}.npz")
-        mask = z["mask"].astype(bool) if "mask" in z else np.ones(z["points"].shape[:-1], bool)
-        P = z["points"].reshape(-1, 3)[mask.reshape(-1)]
-        C = colors01(z["colors"]).reshape(-1, 3)[mask.reshape(-1)]
-        keep = np.isfinite(P).all(1)
-        P, C = P[keep], C[keep]
-        i = subsample(len(P), MDE_POINTS)
-        entry["files"].append(write_cloud(OUT / "clouds" / "mde" / d.name / f"moge3_{tag}.bin.gz", P[i] @ FLIP, C[i], [viewer_c2w(np.eye(4))]))
+        if planes.exists():
+            p = json.loads(planes.read_text())
+            entry["angle"] = [rnd(wall_angle(p.get(t, {}).get("angles_deg"))) for t in ("fisheye", "litecalib")]
 
-    if (d / "mde_planes.json").exists():
-        p = json.loads((d / "mde_planes.json").read_text())
-        entry["angle"] = [rnd(wall_angle(p.get(t, {}).get("angles_deg"))) for t in ("fisheye", "litecalib")]
-
-    entry["photos"] = {"fisheye": thumbs(d.name, [d / "mde_frame.jpg"], "mde"),
-                       "litecalib": thumbs(d.name, [d / "mde_undist.jpg"], "mde")}
-    return {"moge3": entry}
+        entry["photos"] = {"fisheye": thumbs(d.name, [d / "mde_frame.jpg"], "mde"),
+                           "litecalib": thumbs(d.name, [d / "mde_undist.jpg"], "mde")}
+        res[method] = entry
+    return res
 
 
 def recon_cloud(d, method, tag):
@@ -178,7 +193,7 @@ def recon(d):
     res = {}
     for f in sorted(d.glob("*_fisheye.npz")):
         method = f.name[:-len("_fisheye.npz")]
-        if method == "mde" or not (d / f"{method}_litecalib.npz").exists():
+        if method == "mde" or method.startswith("mde_") or not (d / f"{method}_litecalib.npz").exists():
             continue
 
         entry = {"files": [recon_cloud(d, method, t) for t in ("fisheye", "litecalib")]}
